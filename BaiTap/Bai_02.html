@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let matrix = [
+            [3, 1, 5, 4],
+            [2, 7, 1, 8],
+            [3, 5, 1, 6],
+            [1, 2, 1, 2]
+        ]
+        let position2 = 0;
+        for (let i = 0; i < matrix.length; i++) {
+            for (let j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] > 0 && matrix[i][j] != 1) {
+                    for (let k = 1; k <= matrix[i][j]; k++) {
+                        if (matrix[i][j] % k == 0) {
+                            position2 += 1;
+                        }
+                        if (position2 == 2) {
+                            console.log(`Số ${matrix[i][j]} là số nguyên tố đầu tiên ở vị trí i = ${i} và j = ${j}`);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
